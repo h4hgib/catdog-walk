@@ -43,5 +43,32 @@ shinyUI(navbarPage(
            ),
   
   # toggle walker db ----
-  tabPanel("Walker Database")
+  tabPanel("Walker Database",
+           div(
+             class = "jumbotron",
+             id = "walker_form",
+             fluidRow(column(width = 4,
+                             textInput(inputId = "walker_fname", 
+                                       label = "Forename", 
+                                       value = "")),
+                      column(width = 4,
+                             textInput(inputId = "walker_sname", 
+                                       label = "Surname", 
+                                       value = ""))),
+             textInput(inputId = "email",
+                       label = "Email address"),
+             selectizeInput(inputId = "walker_level",
+                            label = "Dog walking Experience",
+                            choice = c("", "beginner", "intermediate", "pro")),
+             checkboxGroupInput(inputId = "pref_dog", 
+                                label = "What size dogs would you like to walk",
+                                choices = c("Small", "Medium", "Large"),
+                                inline = T),
+             br(),
+             checkboxInput(inputId = "over18", 
+                           label = "Please check if you 18 or over"),
+             actionButton(inputId = "submit", label = "Submit", 
+                          class = "btn-primary")
+           )
+  )
 ))
