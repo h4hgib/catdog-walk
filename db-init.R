@@ -24,4 +24,16 @@ dbWriteTable(conn = doggodb,
              name = "dog_tbl",
              value = dog_tbl)
 
-walker_tbl <- data.frame()
+walker_tbl <- data.frame(walker_id = integer(),
+                         name = character(),
+                         email = character(),
+                         phone_no = character(),
+                         level = character(),
+                         over_18 = logical(),
+                         dog_preference = character())
+
+dbWriteTable(conn = doggodb,
+             name = "walker_tbl",
+             value = walker_tbl)
+
+walk_log_tbl <- data.table()
