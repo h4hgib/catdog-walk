@@ -8,6 +8,7 @@
 library(shiny)
 
 shinyUI(navbarPage(
+  shinyjs::useShinyjs(),
   title = "Animals In Need Foundation (Gibraltar)",
   # book dog walk ----
   tabPanel("Book Dog Walk!"),
@@ -37,7 +38,7 @@ shinyUI(navbarPage(
                        format = "yyyy-mm-dd", startview = "year"),
              dateInput(inputId = "unavail_to", label = "Unavailable to",
                        format = "yyyy-mm-dd", startview = "year"),
-             actionButton(inputId = "submit", label = "Submit", 
+             actionButton(inputId = "submit_dog", label = "Submit", 
                           class = "btn-primary")
              )
            ),
@@ -67,7 +68,7 @@ shinyUI(navbarPage(
              br(),
              checkboxInput(inputId = "over18", 
                            label = "Please check if you 18 or over"),
-             actionButton(inputId = "submit", label = "Submit", 
+             actionButton(inputId = "submit_walker", label = "Submit", 
                           class = "btn-primary")
            )
   )
