@@ -1,0 +1,42 @@
+---
+title: "Dog Walking Day"
+output: 
+  html_document: 
+    self_contained: no
+    theme: null
+    highlight: null
+    mathjax: null
+params:
+  date: !r as.POSIXct("2015-01-01 12:30:00")
+  picture: !r as.character("52-cover.jpg")
+  place: "AINF shelter in La Linea"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+#library(leaflet)
+library(googleVis)
+op <- options(gvis.plot.tag="chart")
+library(data.table)
+```
+
+Next Dog Walking Day Coming up on `r strftime(params$date, format="%Y-%m-%d %H:%M") `
+
+Come along and walk one of our dogs
+
+```{r, out.width = "400px", echo=FALSE}
+#![Name of Dog](http://www.ainf.gi/images/dogs/52/cover.jpg)
+
+knitr::include_graphics(params$picture)
+```
+
+
+Meet new people, get fit while exercising one of our dogs.
+
+Join us at `r strftime(params$date, format="%H:%M") ` at the `r params$place ` (link of map below)
+
+Everyone is welcome, just remember if you are under 18 please bring an adult.
+
+[Location Link](https://goo.gl/maps/47cGJxQpnvK2)
+
+

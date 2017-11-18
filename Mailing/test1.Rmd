@@ -1,0 +1,26 @@
+---
+title: "Dog Walk"
+date: "18/11/2017"
+output: 
+  html_document: 
+    self_contained: no
+    theme: null
+    highlight: null
+    mathjax: null
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+## Dog Walk !
+
+```{r, out.width = "400px", echo=FALSE}
+#![Name of Dog](http://www.ainf.gi/images/dogs/52/cover.jpg)
+
+knitr::include_graphics("52-cover.jpg")
+```
+```
+
+
